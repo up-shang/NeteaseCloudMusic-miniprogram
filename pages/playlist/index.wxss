@@ -1,0 +1,10 @@
+/* pages/playlist/index.wxss */
+.playlist{
+  margin-top: 30rpx;
+}
+.playlist-icon{
+  height: 200rpx !important;
+}
+.playlist-text{
+  height: 32rpx !important;
+}

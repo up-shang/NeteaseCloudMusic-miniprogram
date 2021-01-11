@@ -1,0 +1,26 @@
+<!--pages/video/index.wxml-->
+<view class="container">
+  <view class="video-container"> 
+    <ul>
+      <li wx:for="{{videoList}}" wx:key="index">
+        <image bindtap="play" data-id="{{item.id}}" data-name="{{item.name}}" class="video-img" src="{{item.cover}}"></image>
+        <view style="font-size:14px;margin:0 0 5px 5px;height: 65rpx">{{item.name}}</view>
+        <view style="font-size:12px;padding-left:5px;color:gray">{{item.artistName}}</view>
+      </li>
+    </ul>
+  </view>
+  <van-tabbar active="{{ active }}" active-color="red" bind:change="onTabbarChange">
+    <van-tabbar-item>
+      <view class="tabbar">
+        <image style="width:20px;height:20px" src="{{audioImg}}"></image>
+        <text style="font-size:15px;margin-left:30rpx;font-weight: bolder;">音乐</text>
+      </view>
+    </van-tabbar-item>
+    <van-tabbar-item>
+      <view class="tabbar">
+          <image style="width:20px;height:20px" src="{{videoImg}}"></image>
+          <text style="font-size:15px;margin-left:30rpx;font-weight: bolder;">视频</text>
+      </view>
+    </van-tabbar-item>
+  </van-tabbar>
+</view>

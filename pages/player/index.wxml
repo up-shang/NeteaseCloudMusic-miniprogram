@@ -1,0 +1,41 @@
+<!--pages/player/index.wxml-->
+<view class="container" style="height: {{height}};background-image: url('{{coverImgUrl}}?imageView&blur=40x20')">
+  <image class="coverImg" src="{{coverImgUrl}}"></image>
+  <view class="player-info">
+    <text class="player-title">{{title}}</text>
+    <text class="player-singer">{{singer}}</text>
+  </view>
+    <view class="lyric">
+      <view class="lyricinfo">
+        <text>{{currentLyric}}</text>
+      </view>
+    </view>
+  <view class="slider">
+    <van-slider bind:drag="drag" bind:change="progressChange" value="{{slider}}" bar-height="3px" active-color="#ee0a24" />
+  </view>
+  <view class="time">
+    <text class="currTime">{{currFormatTime}}</text>
+    <text class="totalTime">{{totalFormatTime}}</text>
+  </view>
+  <view class="player-container">
+    <view class="player">
+      <icon class="fa fa-random player-icon-small"></icon>  
+      <icon bindtap="swicthSong" data-name="backward" class="fa fa-step-backward player-icon-small"></icon>
+      <icon bindtap="player" hidden="{{isHidden}}" class="fa fa-pause-circle player-icon"></icon>
+      <icon bindtap="player" hidden="{{!isHidden}}" class="fa fa-play-circle player-icon"></icon>
+      <icon bindtap="swicthSong" data-name="forward" class="fa fa-step-forward player-icon-small"></icon>
+      <icon bindtap="clickList" class="fa fa-list-ul player-icon-small"></icon>
+    </view>
+  </view>
+  <van-popup
+    custom-class="popup"
+    bind:click-overlay="onOverlay"
+    show="{{ popupShow }}"
+    round
+    position="bottom"
+    custom-style="height: 75%"
+  >
+    <van-cell wx:for="{{playerList}}" title="{{item.title}}" value="{{item.singer}}">
+    </van-cell>
+  </van-popup>
+</view>

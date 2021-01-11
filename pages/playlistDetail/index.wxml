@@ -1,0 +1,25 @@
+<!--pages/playlistDetail/index.wxml-->
+<view>
+  <view class="playlist-title" style="background-image: url('{{songsImg}}?imageView&blur=40x20')">
+    <image class="playlist-title-img" src="{{songsImg}}"></image>
+    <view class="playlist-title-text">
+      <text style="flex:6">{{songsText}}</text>
+      <text style="flex:1;font-size:12px">简介：{{songsDesc}}...</text>
+    </view>
+  </view>
+  <view class="all-play" bindtap="addToPlaylists">
+    <icon class="fa fa-play-circle all-play-icon"></icon><text class="all-play-text">全部播放({{songsTotal}})</text>
+  </view>
+  <van-cell 
+    title-class="van__title" 
+    value-class="van__value" 
+    wx:for="{{songs}}" 
+    wx:key="id"
+    title="{{item.name}}" 
+    label="{{item.ar[0].name}} - {{item.al.name}}"
+  >
+    <view class="cell-icon">
+      <van-icon bindtap="play" name="play-circle-o" size="60rpx" data-id="{{item.id}}" data-name="{{item.name}}" data-singer="{{item.ar[0].name}}" data-image="{{item.al.picUrl}}"/>
+    </view>
+  </van-cell>
+</view>

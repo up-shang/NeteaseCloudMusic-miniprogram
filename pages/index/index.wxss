@@ -1,0 +1,139 @@
+/**index.wxss**/
+.tabbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.min-player-container{
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  bottom: 175rpx;
+  height: 50px;
+  border-radius: 30px;
+}
+.min-player{
+  display: flex;
+  align-items: center;
+}
+.min-player-image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.min-player-text{
+  flex: 4;
+  font-size: 13px;
+  color: #eee;
+  padding-left: 20rpx;
+}
+.min-player-icon{
+  flex: 1;
+  font-size: 30px;
+  color: #eee;
+}
+.userinfo {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  text-align: left;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 30rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.search {
+  width: 100%;
+  margin: 10rpx 0;
+}
+.search-van{
+  background-color: #f0f2f5;
+}
+.hot-playlist{
+  width: 96%;
+  height: 350rpx;
+  margin-bottom: 30rpx;
+}
+.hot-title{
+  display: flex;
+  align-items: center;
+  width: 96%;
+  height: 50rpx;
+  padding: 0 0 10rpx 10rpx;
+
+}
+.hot-title-name{
+  flex: 1;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.hot-more{
+  flex: 1;
+  font-size: 14px;
+  color: gray;
+  text-align: right;
+}
+.hot-playlist ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+}
+.hot-playlist li {
+  width: 250rpx;
+  height: 320rpx;
+  margin: 0 7rpx;
+  border-radius: 10rpx;
+}
+.playList{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.playList ul{
+  display: flex;
+  flex-direction: column;
+  padding-left: 20rpx;
+}
+.playList li{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 15rpx 0;
+}
+.hot-img{
+  width:230rpx;
+  height:230rpx;
+  border-radius:5px
+}
+.hot-text{
+  font-size: 12px;
+  /* color:gray */
+}
+.img{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+.listinfo{
+  display: flex;
+  height: 100px;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20rpx;
+}
+.info{
+  display: block;
+  padding: 12rpx 0;
+  /* color: gray; */
+  font-size: 28rpx;
+}

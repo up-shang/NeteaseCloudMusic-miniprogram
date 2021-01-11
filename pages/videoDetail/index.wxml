@@ -1,0 +1,5 @@
+<!--pages/videoDetail/index.wxml-->
+<view class="container">
+  <video class="width:95%" src="{{src}}" title="{{title}}" autoplay="true">
+  </video>
+</view>

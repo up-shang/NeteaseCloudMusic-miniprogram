@@ -1,0 +1,98 @@
+/* pages/player/index.wxss */
+.container{
+  width: 100%;
+  background-size: 6000px;
+  background-position: center center;
+}
+.coverImg{
+  width: 640rpx;
+  height: 640rpx;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+}
+.player-info{
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+  padding-left: 60rpx;
+}
+.player-title{
+  color: #eee;
+  font-size: 24px;
+  font-weight: bolder;
+  padding: 10rpx;
+}
+.player-singer{
+  color: #ccc;
+  font-size: 16px;
+  padding: 10rpx;
+}
+.lyric{
+  width: 620rpx;
+  height: 270rpx;
+  color: #ccc;
+  overflow-y: auto;
+}
+.lyricinfo{
+  height: 270rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.lyric-text{
+  margin:20rpx 0;
+}
+.time{
+  position: absolute;
+  bottom: 265rpx;
+  left: 35px;
+  right: 35px;
+}
+.currTime{
+  display: block;
+  float: left;
+  color: #ccc;
+}
+.totalTime{
+  display: block;
+  float: right;
+  color: #ccc;
+}
+.slider{
+  position: absolute;
+  bottom: 320rpx;
+  left: 35px;
+  right: 35px;
+  height: 3px;
+}
+.popup{
+  padding: 30rpx;
+  overflow-y: auto;
+}
+.player-container{
+  position: fixed;
+  bottom: 100rpx;
+  left: 20px;
+  right: 20px;
+  height: 150rpx;
+}
+.player{
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player-icon{
+  flex: 1;
+  font-size: 70px;
+  text-align: center;
+  color: #eee;
+}
+.player-icon-small{
+  flex: 1;
+  font-size: 30px;
+  text-align: center;
+  color: #eee;
+}

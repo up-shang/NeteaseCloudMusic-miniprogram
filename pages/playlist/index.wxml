@@ -1,0 +1,18 @@
+<!--pages/playlist/index.wxml-->
+<view>
+  <van-tabs active="{{ active }}" bind:change="onTabChange">
+    <van-tab wx:for="{{hotsort}}" wx:key="id" title="{{item.name}}"></van-tab>
+  </van-tabs>
+  <van-grid custom-class="playlist" icon-size="210rpx" column-num="3">
+    <van-grid-item 
+      link-type="navigateTo"
+      url="../../pages/playlistDetail/index?id={{item.id}}"
+      icon-class="playlist-icon" 
+      text-class="playlist-text" 
+      icon="{{item.coverImgUrl}}" 
+      text="{{item.name}}" 
+      wx:for="{{playlist}}" 
+      wx:key="id"
+    />
+    </van-grid>
+</view>

@@ -1,0 +1,53 @@
+/* pages/playlistDetail/index.wxss */
+.playlist-title{
+  display: flex;
+  min-height: 300rpx;
+  justify-content: center;
+  align-items: center;
+  padding: 25rpx 25rpx;
+  background-size: 6000rpx;
+  background-position: center center;
+}
+.all-play{
+  margin-top: 30rpx;
+  height: 35px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.all-play-icon{
+  font-size: 35px;
+  color: red;
+  margin:0 14rpx 0 20rpx;
+}
+.all-play-text{
+  font-weight: 200;
+}
+.playlist-title-img{
+  flex: 1;
+  max-width: 200rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+}
+.playlist-title-text{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 200rpx;
+  padding-left: 20rpx;
+  color: gray;
+}
+.van__title{
+  flex: 4 !important
+}
+.van__value{
+  flex: 1 !important
+}
+.cell-icon{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}

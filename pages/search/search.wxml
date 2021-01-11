@@ -1,0 +1,28 @@
+<!--search.wxml-->
+<view class="container">
+  <view class="search">
+    <van-sticky>
+      <van-search background="#f0f2f5" value="{{ searchInfo }}" focus="{{true}}" shape="round" placeholder="搜索 音乐/歌手/歌单"
+        bind:search="onSearch" bind:change="onChange" bind:clear="onClear"/>
+    </van-sticky>
+  </view>
+  <view class="cell" hidden="{{visable}}">
+    <view class="all-play" bindtap="addToPlaylists">
+      <icon class="fa fa-play-circle all-play-icon"></icon><text class="all-play-text">全部播放({{songsTotal}})</text>
+    </view>
+    <van-cell title-class="van__title" custom-class="cell-custom" value-class="van__value" wx:if="{{songs}}" wx:for="{{songs}}" wx:key="id"
+      title="{{item.name}}" label="{{item.ar[0].name}} - {{item.al.name}}">
+      <view class="cell-icon">
+        <van-icon bindtap="play" name="play-circle-o" size="60rpx" data-id="{{item.id}}" data-singer="{{item.ar[0].name}}" data-name="{{item.name}}" data-image="{{item.al.picUrl}}"/>
+      </view>
+    </van-cell>
+  </view>
+  <view class="tag" hidden="{{!visable}}">
+    <view class="tag-root">
+      <van-tag bindtap="clickTag" data-name="{{item}}" custom-class="tag-custom" color="#fff" wx:for="{{searchList}}" wx:key="item" round size="large"><span style="color:red">{{item}}</span></van-tag>
+    </view>
+    <view class="tag-icon" hidden="{{deleteVisable}}">
+      <van-icon bindtap="clickDeleteIcon" custom-class="tag-icon-in" name="delete" color="red" size="50rpx"/>
+    </view>
+  </view>
+</view>
