@@ -1,6 +1,6 @@
 function req(obj) {
 	return new Promise((resolve, reject) => {
-		const HOST = 'http://82.156.71.207:3000';
+		const HOST = ''; //你的api接口
 		const method = obj.method || "GET";
 		const url = HOST + obj.url || "";
 		const data = obj.data || {};
