@@ -1,5 +1,6 @@
 # 网易云音乐微信小程序版本
 > 本项目纯属练手，未进行任何商业使用。  
+
 > `API` 由 [Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) 提供。
 
 [![NPM Version][npm-image]][npm-url]
