@@ -45,7 +45,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.1",
-  "appid": "", //your appId
+  "appid": "",
   "projectname": "MusicPlayer",
   "debugOptions": {
     "hidedInDevtools": []
