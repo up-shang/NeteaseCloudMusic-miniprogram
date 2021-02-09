@@ -1,5 +1,7 @@
 // pages/playlistDetail/index.js
-import {getPlaylistDetail} from '../../api/playlistDetail'
+import {
+  getPlaylistDetail
+} from '../../api/playlistDetail'
 Page({
 
   /**
@@ -13,16 +15,18 @@ Page({
     songsTotal: 0
   },
   //获取歌单详情列表
-  getPlaylistDetail(id){
-    const param = {id: id}
+  getPlaylistDetail(id) {
+    const param = {
+      id: id
+    }
     getPlaylistDetail(param).then(res => {
-      if(res.code === 200){
+      if (res.code === 200) {
         console.log(res)
         this.setData({
           songs: res.playlist.tracks,
           songsImg: res.playlist.coverImgUrl,
           songsText: res.playlist.name,
-          songsDesc: res.playlist.description.substr(0,15)
+          songsDesc: res.playlist.description.substr(0, 15)
         })
         this.setData({
           songsTotal: this.data.songs.length
@@ -31,8 +35,8 @@ Page({
     })
   },
   //播放歌曲
-  play(e){
-    const tmp ={
+  play(e) {
+    const tmp = {
       id: e.currentTarget.dataset.id,
       title: e.currentTarget.dataset.name,
       singer: e.currentTarget.dataset.singer,
@@ -44,10 +48,15 @@ Page({
     })
   },
   //一键添加全部歌单歌曲
-  addToPlaylists(){
+  addToPlaylists() {
     const addSong = []
-    this.data.songs.forEach(item =>{
-      let tmp = {id: item.id,title:item.name,singer: item.ar[0].name,coverImgUrl:item.al.picUrl}
+    this.data.songs.forEach(item => {
+      let tmp = {
+        id: item.id,
+        title: item.name,
+        singer: item.ar[0].name,
+        coverImgUrl: item.al.picUrl
+      }
       addSong.push(tmp)
     })
     getApp().globalData.playerList.unshift(...addSong)
