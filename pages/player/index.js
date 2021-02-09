@@ -5,7 +5,7 @@ let timeId ='' //定时器
 Page({
 
   /**
-   * 页面的初始数据
+   * 页面的初始数据。
    */
   data: {
     height: '',
