@@ -5,14 +5,14 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    // 登录,mac上传测试,2.9
+    // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
     // 获取用户信息
-    wx.getSetting({
+/*     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
@@ -30,12 +30,12 @@ App({
           })
         }
       }
-    })
+    }) */
   },
   /**
    * 设置监听器
    */
-  setWatcher(page) {
+/*   setWatcher(page) {
     let data = page.data;
     let watch = page.watch;
     Object.keys(watch).forEach(v => {
@@ -50,11 +50,11 @@ App({
       let deep = watch[v].deep; // 若未设置deep,则为undefine
       this.observe(nowData, lastKey, watchFun, deep, page); // 监听nowData对象的lastKey
     })
-  },
+  }, */
   /**
    * 监听属性 并执行监听函数
    */
-  observe(obj, key, watchFun, deep, page) {
+ /*  observe(obj, key, watchFun, deep, page) {
     var val = obj[key];
     // 判断deep是true 且 val不能为空 且 typeof val==='object'（数组内数值变化也需要深度监听）
     if (deep && val != null && typeof val === 'object') {
@@ -78,7 +78,7 @@ App({
         return val;
       }
     })
-  },
+  }, */
   //app 全局属性监听
   watch: function (method) {
     var obj = this.globalData;
@@ -87,6 +87,7 @@ App({
       enumerable: true,
       set: function (value) { //动态赋值，传递对象，为 globalData 中对应变量赋值
         this.currSong = value.currSong
+        this.userInfo = value.userInfo
         method(value);
       },
       get: function () { //获取全局变量值，直接返回全部
@@ -96,10 +97,10 @@ App({
   },
   globalData: {
     userInfo: null,
+    cookie: '',
     playerList: [],
     currSong: {},
-    //改变量用户存放全局变量修改过程中的值传递, 传递对象,
     videoUrl: '',
-    data: {}
+    data: {} //改变量用户存放全局变量修改过程中的值传递, 传递对象
   }
 })

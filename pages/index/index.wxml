@@ -9,25 +9,33 @@
     </van-tabbar-item>
     <van-tabbar-item>
       <view class="tabbar">
-          <image style="width:20px;height:20px" src="{{videoImg}}"></image>
-          <text style="font-size:15px;margin-left:30rpx;font-weight: bolder;">视频</text>
+        <image style="width:20px;height:20px" src="{{videoImg}}"></image>
+        <text style="font-size:15px;margin-left:30rpx;font-weight: bolder;">视频</text>
       </view>
     </van-tabbar-item>
   </van-tabbar>
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+    <van-popup round custom-class="loginContainer" show="{{ show }}" bind:close="onClose">
+      <van-cell-group border="{{ false }}" custom-class="login">
+        <van-field model:value="{{ phone }}" label="手机号" placeholder="请输入手机号" border="{{ false }}"/>
+        <van-field model:value="{{ password }}" label="密码" placeholder="请输入密码" border="{{ false }}" />
+      </van-cell-group>
+      <button size="mini" type="primary" bindtap="login"> 登录 </button>
+    </van-popup>
+    <button style="margin-left: 30rpx" wx:if="{{!hasUserInfo}}" size="mini" bindtap="showlogin"> 登录 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
     </block>
   </view>
   <view class="search" bind:tap="clickSearch">
-    <van-search background="#f0f2f5" shape="round" placeholder="搜索歌曲" disabled/>
+    <van-search background="#f0f2f5" shape="round" placeholder="搜索歌曲" disabled />
   </view>
   <view class="hot-playlist">
     <view class="hot-title">
       <text class="hot-title-name">热门歌单</text>
-      <text bindtap="clickMore" class="hot-more">更多</text><van-icon name="arrow" color="gray" />
+      <text bindtap="clickMore" class="hot-more">更多</text>
+      <van-icon name="arrow" color="gray" />
     </view>
     <scroll-view scroll-x="true">
       <ul>
@@ -36,32 +44,36 @@
           <text class="hot-text">{{item.name}}</text>
         </li>
       </ul>
-  </scroll-view>
+    </scroll-view>
   </view>
   <view class="playList">
     <ul>
       <li bindtap="clickRankList" data-id="19723756">
         <image class="img" src="{{upImgUrl}}" />
         <view class="listinfo">
-          <span class="info" wx:for="{{upListForHome}}" wx:key="id">{{item.name}} - <span style="color:gray">{{item.ar[0].name}}</span></span>
+          <span class="info" wx:for="{{upListForHome}}" wx:key="id">{{item.name}} - <span
+              style="color:gray">{{item.ar[0].name}}</span></span>
         </view>
       </li>
       <li bindtap="clickRankList" data-id="3779629">
         <image class="img" src="{{newImgUrl}}" />
         <view class="listinfo">
-          <span class="info" wx:for="{{newListForHome}}" wx:key="id">{{item.name}} - <span style="color:gray">{{item.ar[0].name}}</span></span>
+          <span class="info" wx:for="{{newListForHome}}" wx:key="id">{{item.name}} - <span
+              style="color:gray">{{item.ar[0].name}}</span></span>
         </view>
       </li>
       <li bindtap="clickRankList" data-id="2884035">
         <image class="img" src="{{originalImgUrl}}" />
         <view class="listinfo">
-          <span class="info" wx:for="{{originalListForHome}}" wx:key="id">{{item.name}} - <span style="color:gray">{{item.ar[0].name}}</span></span>
+          <span class="info" wx:for="{{originalListForHome}}" wx:key="id">{{item.name}} - <span
+              style="color:gray">{{item.ar[0].name}}</span></span>
         </view>
       </li>
     </ul>
   </view>
   <view class="min-player-container">
-    <view class="min-player" style="border-radius: 30px;background-image: url('{{currSong.coverImgUrl}}?imageView&blur=40x20')">
+    <view class="min-player"
+      style="border-radius: 30px;background-image: url('{{currSong.coverImgUrl}}?imageView&blur=40x20')">
       <image bindtap="toPlayer" class="min-player-image" src="{{currSong.coverImgUrl}}"></image>
       <text class="min-player-text">{{currSong.title}} - {{currSong.singer}}</text>
       <icon bindtap="play" hidden="{{!isPause}}" class="fa fa fa-play-circle min-player-icon"></icon>

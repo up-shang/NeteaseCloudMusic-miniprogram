@@ -7,7 +7,8 @@
     "pages/playlistDetail/index",
     "pages/player/index",
     "pages/video/index",
-    "pages/videoDetail/index"
+    "pages/videoDetail/index",
+    "pages/profile/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -23,6 +24,7 @@
     "van-search": "@vant/weapp/search/index",
     "van-image": "@vant/weapp/image/index",
     "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
     "van-icon": "@vant/weapp/icon/index",
     "van-sticky": "@vant/weapp/sticky/index",
     "van-tag": "@vant/weapp/tag/index",
@@ -33,6 +35,7 @@
     "van-grid": "@vant/weapp/grid/index",
     "van-grid-item": "@vant/weapp/grid-item/index",
     "van-slider": "@vant/weapp/slider/index",
-    "van-popup": "@vant/weapp/popup/index"
+    "van-popup": "@vant/weapp/popup/index",
+    "van-field": "@vant/weapp/field/index"
   }
 }

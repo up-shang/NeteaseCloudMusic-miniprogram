@@ -1,0 +1,5 @@
+<!--pages/profile/index.wxml-->
+<view class="container">
+  <image class="avatar" bindtap="showPic" src="{{userInfo.avatarUrl}}"></image>
+  <text>{{userInfo.nickname}}</text>
+</view>
