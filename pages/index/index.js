@@ -41,9 +41,9 @@ Page({
     })
   },
   watchBack: function (value) {  //这里的value 就是 app.js 中返回整个 globalData
+    const tmp = value.currSong //注意小程序bug,需将对象式赋值改为直接变量赋值
     this.setData({
-      currSong: value.currSong,
-      userInfo: value.userInfo
+      currSong: tmp
     });
   },
   onLoad: function () {
@@ -95,7 +95,7 @@ Page({
     }
     login(param).then(res =>{
       if(res.code === 200){
-        app.globalData.userInfo = res.profile
+        app.globalData.userInfo= res.profile
         app.globalData.cookie = res.cookie
         this.setData({
           userInfo: res.profile,

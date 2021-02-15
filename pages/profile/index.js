@@ -10,8 +10,9 @@ Page({
     userInfo: {}
   },
   watchBack: function (value) { //这里的value 就是 app.js 中返回整个 globalData
+    const tmp = value.userInfo
     this.setData({
-      userInfo: value.userInfo
+      userInfo: tmp
     });
   },
   //获取手机相册照片后，上传图片到服务器
